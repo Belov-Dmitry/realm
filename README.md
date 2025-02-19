@@ -1,2 +1,2 @@
-# prject
-news service
+# Realm Test App
+For Legend's team
