@@ -151,19 +151,26 @@ class LoginViewController: UIViewController {
     
     // Печать данных из базы
     @objc func printButtonTapped() {
-        let userProfiles = appStorage.fetch()
-        var resultText = "User Profiles in DB:\n"
-        
-        for userProfile in userProfiles {
-            resultText += "Name: \(userProfile.firstName) \(userProfile.lastName), Email: \(userProfile.email)\n"
+        // Разворачиваем опционал с использованием guard let
+        guard let userProfiles = appStorage.fetch() else {
+            resultLabel.text = "Error fetching user profiles or no profiles found."
+            return
         }
         
+        var resultText = "User Profiles in DB:\n"
+        
+        // Проверка на пустоту массива после разворачивания
         if userProfiles.isEmpty {
             resultText = "No user profiles found."
+        } else {
+            for userProfile in userProfiles {
+                resultText += "Name: \(userProfile.firstName) \(userProfile.lastName), Email: \(userProfile.email)\n"
+            }
         }
         
         resultLabel.text = resultText
     }
+
     
     // Переход на экран новостей
     @objc func goToNewsButtonTapped() {

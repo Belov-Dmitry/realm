@@ -130,21 +130,27 @@ class ViewController: UIViewController {
     
     // Обработчик нажатия на кнопку "Печать из базы"
     @objc func printButtonTapped() {
-        let users = appStorage.fetch()
-        var resultText = "Users in DB:\n"
-        
-        for user in users {
-            resultText += "Name: \(user.name), Age: \(user.age)\n"
+        // Разворачиваем опционал с использованием guard let
+        guard let users = appStorage.fetch() else {
+            resultLabel.text = "Error fetching users or no users found."
+            return
         }
         
+        var resultText = "Users in DB:\n"
+        
+        // Проверка на пустоту массива после разворачивания
         if users.isEmpty {
             resultText = "No users found."
+        } else {
+            for user in users {
+                resultText += "Name: \(user.name), Age: \(user.age)\n"
+            }
         }
         
         resultLabel.text = resultText
     }
+    
 }
-
 // Модели данных
 final class User: Object {
     @Persisted(primaryKey: true) var id: String = UUID().uuidString

@@ -136,21 +136,27 @@ class NewsViewController: UIViewController {
     
     // Печать данных из базы
     @objc func printButtonTapped() {
-        let newsList = appStorage.fetch()
-        var resultText = "Favorite News in DB:\n"
-        
-        for news in newsList {
-            resultText += "Title: \(news.title), Link: \(news.link), Content: \(news.content)\n"
+        // Разворачиваем опционал с использованием guard let
+        guard let newsList = appStorage.fetch() else {
+            resultLabel.text = "Error fetching news or no news found."
+            return
         }
         
+        var resultText = "Favorite News in DB:\n"
+        
+        // Проверка на пустоту массива после разворачивания
         if newsList.isEmpty {
             resultText = "No news found."
+        } else {
+            for news in newsList {
+                resultText += "Title: \(news.title), Link: \(news.link), Content: \(news.content)\n"
+            }
         }
         
         resultLabel.text = resultText
     }
+    
 }
-
 // Модель данных для новостей
 final class FavoriteNews: Object {
     @Persisted(primaryKey: true) var id: String = UUID().uuidString
