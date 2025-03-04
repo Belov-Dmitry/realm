@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F41E8A522D70DDD700C1EFF9 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = F41E8A512D70DDD700C1EFF9 /* FirebaseAppCheck */; };
+		F41E8A542D70DDD700C1EFF9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F41E8A532D70DDD700C1EFF9 /* FirebaseAuth */; };
+		F41E8A562D70DDD700C1EFF9 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F41E8A552D70DDD700C1EFF9 /* FirebaseAuthCombine-Community */; };
+		F41E8A582D70DDD700C1EFF9 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = F41E8A572D70DDD700C1EFF9 /* FirebaseCore */; };
+		F41E8A5A2D70DDD700C1EFF9 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F41E8A592D70DDD700C1EFF9 /* FirebaseDatabase */; };
+		F41E8A5C2D70DDD700C1EFF9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F41E8A5B2D70DDD700C1EFF9 /* FirebaseFirestore */; };
+		F41E8A5E2D70DDD700C1EFF9 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = F41E8A5D2D70DDD700C1EFF9 /* FirebaseFirestoreCombine-Community */; };
+		F41E8A612D70DDF800C1EFF9 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F41E8A602D70DDF800C1EFF9 /* GoogleSignInSwift */; };
 		F453CA222D5BDB2F003C1359 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F453CA212D5BDB2F003C1359 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +77,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F41E8A612D70DDF800C1EFF9 /* GoogleSignInSwift in Frameworks */,
+				F41E8A5A2D70DDD700C1EFF9 /* FirebaseDatabase in Frameworks */,
+				F41E8A5E2D70DDD700C1EFF9 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				F41E8A522D70DDD700C1EFF9 /* FirebaseAppCheck in Frameworks */,
+				F41E8A582D70DDD700C1EFF9 /* FirebaseCore in Frameworks */,
+				F41E8A542D70DDD700C1EFF9 /* FirebaseAuth in Frameworks */,
 				F453CA222D5BDB2F003C1359 /* RealmSwift in Frameworks */,
+				F41E8A562D70DDD700C1EFF9 /* FirebaseAuthCombine-Community in Frameworks */,
+				F41E8A5C2D70DDD700C1EFF9 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +147,14 @@
 			name = AddNews;
 			packageProductDependencies = (
 				F453CA212D5BDB2F003C1359 /* RealmSwift */,
+				F41E8A512D70DDD700C1EFF9 /* FirebaseAppCheck */,
+				F41E8A532D70DDD700C1EFF9 /* FirebaseAuth */,
+				F41E8A552D70DDD700C1EFF9 /* FirebaseAuthCombine-Community */,
+				F41E8A572D70DDD700C1EFF9 /* FirebaseCore */,
+				F41E8A592D70DDD700C1EFF9 /* FirebaseDatabase */,
+				F41E8A5B2D70DDD700C1EFF9 /* FirebaseFirestore */,
+				F41E8A5D2D70DDD700C1EFF9 /* FirebaseFirestoreCombine-Community */,
+				F41E8A602D70DDF800C1EFF9 /* GoogleSignInSwift */,
 			);
 			productName = AddNews;
 			productReference = 00D511922D5B3396007D6B21 /* AddNews.app */;
@@ -216,6 +240,8 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F453CA202D5BDB2F003C1359 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				F41E8A502D70DD4400C1EFF9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F41E8A5F2D70DDF800C1EFF9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 00D511932D5B3396007D6B21 /* Products */;
@@ -576,6 +602,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F41E8A502D70DD4400C1EFF9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.9.0;
+			};
+		};
+		F41E8A5F2D70DDF800C1EFF9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 		F453CA202D5BDB2F003C1359 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -587,6 +629,46 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F41E8A512D70DDD700C1EFF9 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F41E8A502D70DD4400C1EFF9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		F41E8A532D70DDD700C1EFF9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F41E8A502D70DD4400C1EFF9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F41E8A552D70DDD700C1EFF9 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F41E8A502D70DD4400C1EFF9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		F41E8A572D70DDD700C1EFF9 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F41E8A502D70DD4400C1EFF9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		F41E8A592D70DDD700C1EFF9 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F41E8A502D70DD4400C1EFF9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		F41E8A5B2D70DDD700C1EFF9 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F41E8A502D70DD4400C1EFF9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		F41E8A5D2D70DDD700C1EFF9 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F41E8A502D70DD4400C1EFF9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		F41E8A602D70DDF800C1EFF9 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F41E8A5F2D70DDF800C1EFF9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
 		F453CA212D5BDB2F003C1359 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F453CA202D5BDB2F003C1359 /* XCRemoteSwiftPackageReference "realm-swift" */;
